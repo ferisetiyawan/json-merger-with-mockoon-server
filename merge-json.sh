@@ -3,6 +3,12 @@
 # Define the folder containing JSON files
 folder="json_collection"
 
+# Check if JSON files exist in the folder or its subfolders
+if ! find "$folder" -type f -name '*.json' | grep -q .; then
+    echo "No JSON files found in $folder or its subfolders. Exiting script."
+    exit 1
+fi
+
 # Define the folder output for JSON file
 output="build"
 
