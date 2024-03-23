@@ -7,43 +7,8 @@
     "port": 3002,
     "hostname": "",
     "folders": [],
-    "routes": [
-      {
-        "uuid": "f9f1123c-3b4f-4e7d-9e18-3f8f50114730",
-        "type": "http",
-        "documentation": "mockoon/core/health",
-        "method": "get",
-        "endpoint": "",
-        "responses": [
-          {
-            "uuid": "aeab8d26-abcf-432e-9208-b3964cbe1701",
-            "body": "{\n  status: \"ok\"\n}\n",
-            "latency": 0,
-            "statusCode": 200,
-            "label": "",
-            "headers": [],
-            "bodyType": "INLINE",
-            "filePath": "",
-            "databucketID": "",
-            "sendFileAsBody": false,
-            "rules": [],
-            "rulesOperator": "OR",
-            "disableTemplating": false,
-            "fallbackTo404": false,
-            "default": true,
-            "crudKey": "id"
-          }
-        ],
-        "enabled": true,
-        "responseMode": null
-      }
-    ],
-    "rootChildren": [
-      {
-        "type": "route",
-        "uuid": "f9f1123c-3b4f-4e7d-9e18-3f8f50114730"
-      }
-    ],
+    "routes": [],
+    "rootChildren": [],
     "proxyMode": false,
     "proxyHost": "",
     "proxyRemovePrefix": false,
