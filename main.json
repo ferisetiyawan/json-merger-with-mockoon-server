@@ -1,7 +1,7 @@
 {
     "uuid": "2b0118a7-2c47-4284-b360-15591dc86ed8",
     "lastMigration": 28,
-    "name": "Core",
+    "name": "Mock Server",
     "endpointPrefix": "",
     "latency": 0,
     "port": 3002,
