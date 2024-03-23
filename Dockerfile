@@ -1,5 +1,5 @@
 # Use a small Ubuntu base image
-FROM ubuntu:20.04
+FROM ubuntu:latest as build
 
 # Install necessary packages
 RUN apt-get update \
@@ -7,13 +7,31 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /app
+WORKDIR /json-merger
 
 # Copy your script and JSON files into the container
-COPY merge_json.sh main.json /app/
+COPY merge-json.sh main.json /json-merger/
 
-# Make the script executable
-RUN chmod +x merge_json.sh
+# Copy the json_collection directory into the container
+COPY json_collection /json-merger/json_collection
 
-# Run the script
-CMD ["./merge-json.sh"]
+# Make merge-json.sh executable
+RUN chmod +x merge-json.sh
+
+# Execute merge-json.sh in the build stage
+RUN ./merge-json.sh
+
+# Use mockoon/cli as base image
+FROM mockoon/cli
+
+# Set working directory
+WORKDIR /mockoon
+
+# Copy generated JSON file from the build stage to the current image
+COPY --from=build /json-merger/build/mock-collection.json /mockoon/mock-collection.json
+
+# Expose port 3000
+EXPOSE 3000
+
+# Set command to run mockoon/cli with specified data file and port
+CMD ["--data", "/mockoon/mock-collection.json", "--port", "3000"]
