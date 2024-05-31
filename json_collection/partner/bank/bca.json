@@ -1,0 +1,135 @@
+{
+    "uuid": "c283d43f-179d-4318-a555-c1eaca522b7d",
+    "lastMigration": 28,
+    "name": "Bca",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3001,
+    "hostname": "",
+    "folders": [
+      {
+        "uuid": "fab75b3f-540b-4b72-8f23-e28a3ef42ccf",
+        "name": "rdl",
+        "collapsed": false,
+        "children": [
+          {
+            "type": "route",
+            "uuid": "6ec50f72-57c3-444e-9eb0-7315545133f8"
+          }
+        ]
+      },
+      {
+        "uuid": "27be1088-f641-41e9-b166-add72ee05fbc",
+        "name": "va",
+        "collapsed": false,
+        "children": [
+          {
+            "type": "route",
+            "uuid": "7d0c8262-7681-4f85-85c4-fa7f8c7c4c41"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "uuid": "7d0c8262-7681-4f85-85c4-fa7f8c7c4c41",
+        "type": "http",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "partner/bank/bca/check-va",
+        "responses": [
+          {
+            "uuid": "dab162ed-fc04-462c-bde2-590ab6dc2710",
+            "body": "{\n  va-number: \"1234567890\"\n}\n",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id"
+          }
+        ],
+        "enabled": true,
+        "responseMode": null
+      },
+      {
+        "uuid": "6ec50f72-57c3-444e-9eb0-7315545133f8",
+        "type": "http",
+        "documentation": "",
+        "method": "post",
+        "endpoint": "partner/bank/bca/open-account",
+        "responses": [
+          {
+            "uuid": "681510b4-e0e0-4985-a60f-6cec677907ef",
+            "body": "{}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id"
+          }
+        ],
+        "enabled": true,
+        "responseMode": null
+      }
+    ],
+    "rootChildren": [
+      {
+        "type": "folder",
+        "uuid": "fab75b3f-540b-4b72-8f23-e28a3ef42ccf"
+      },
+      {
+        "type": "folder",
+        "uuid": "27be1088-f641-41e9-b166-add72ee05fbc"
+      }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+      "enabled": false,
+      "type": "CERT",
+      "pfxPath": "",
+      "certPath": "",
+      "keyPath": "",
+      "caPath": "",
+      "passphrase": ""
+    },
+    "cors": true,
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "proxyReqHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "proxyResHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "data": []
+  }
